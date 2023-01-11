@@ -1,12 +1,12 @@
 "use strict";
-import { Elm } from "./Main.elm";
+import { Elm } from "./Main";
 
 // Runs Elm on all elm Nodes in the DOM
 function initializeWidgets() {
   const elmNodes = document.querySelectorAll(".elm");
   elmNodes.forEach((node) => {
     const app = Elm.Main.init({
-      node
+      node,
     });
     // Write ports below this comment
   });

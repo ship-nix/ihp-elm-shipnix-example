@@ -6,5 +6,6 @@ import IHP.FrameworkConfig
 
 config :: ConfigBuilder
 config = do
-    option Development
+    environment <- envOrDefault "IHP_ENV" Development
+    option environment
     option (AppHostname "localhost")

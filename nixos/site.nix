@@ -1,4 +1,4 @@
-{ config, lib, pkgs, environment, ... }:
+{ config, lib, pkgs, environment, frontendAssets, ... }:
 let
   ihpApp = import ../.;
   # TODO: Enable SSL/HTTPS when your domain records are hooked up
@@ -40,6 +40,9 @@ in
             "proxy_ssl_server_name on;" +
             # required when the server wants to use HTTP Authentication
             "proxy_pass_header Authorization;";
+        };
+        "/frontend-assets" = {
+          root = "${frontendAssets}/";
         };
       };
     };

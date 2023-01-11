@@ -40,7 +40,7 @@
               export NODE_ENV=production
               cp -r $src .
               export npm_config_cache=${nodeDependencies}/config-cache
-              cp ${elmOutput}/Main.js .
+              cp ${elmOutput}/Main.js ./Main.js
               mkdir -p $out/frontend-assets
               esbuild index.js --bundle --outfile=$out/frontend-assets/app.js --minify
             '';
